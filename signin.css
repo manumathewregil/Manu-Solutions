@@ -1,0 +1,222 @@
+.signin-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 20px;
+}
+
+.maindiv {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px var(--shadow);
+  overflow: hidden;
+}
+
+.imgcontainer {
+  flex: 1;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: var(--white);
+  text-align: center;
+}
+
+.promo-content h2 {
+  color: var(--white);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.promo-content h2::after {
+  background: var(--white);
+}
+
+.promo-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
+.signin-card {
+  flex: 1;
+  padding: 50px 40px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signin-card .heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+  color: var(--dark);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.input::placeholder {
+  color: #a0aab5;
+}
+
+.input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(103, 58, 183, 0.2);
+  transform: translateY(-2px);
+}
+
+.forgot-password {
+  text-align: right;
+}
+
+.forgot-password a {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.forgot-password a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white);
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 10px 20px rgba(103, 58, 183, 0.3);
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background: linear-gradient(45deg, var(--secondary), var(--primary));
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(103, 58, 183, 0.5);
+}
+
+.login-button:active {
+  transform: translateY(-1px);
+}
+
+.social-account-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.title {
+  display: block;
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.title::before,
+.title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 25%;
+  height: 1px;
+  background: #eee;
+}
+
+.title::before {
+  right: 0;
+}
+
+.title::after {
+  left: 0;
+}
+
+.social-accounts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.social-button .svg {
+  width: 20px;
+  height: 20px;
+  fill: #555;
+  transition: var(--transition);
+}
+
+.social-button:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.social-button.google:hover .svg {
+  fill: #DB4437;
+}
+
+.social-button.apple:hover .svg {
+  fill: #000000;
+}
+
+.social-button.twitter:hover .svg {
+  fill: #1DA1F2;
+}
+
+@media (max-width: 768px) {
+  .maindiv {
+    flex-direction: column;
+  }
+
+  .imgcontainer {
+    padding: 30px;
+  }
+}
