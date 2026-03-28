@@ -27,8 +27,17 @@
 }
 
 @media (max-width: 768px) {
+  .registration-container {
+    padding: 20px 15px;
+  }
   .grid-layout {
     grid-template-columns: 1fr;
+  }
+  .form-actions {
+    flex-wrap: wrap;
+  }
+  .primary-btn, .secondary-btn {
+    width: 100%;
   }
 }
 

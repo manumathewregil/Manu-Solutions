@@ -219,4 +219,8 @@
   .imgcontainer {
     padding: 30px;
   }
+
+  .signin-card {
+    padding: 30px 20px;
+  }
 }
