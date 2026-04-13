@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manu's Digital Solutions | Login</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; position: relative; overflow: hidden; background: var(--bg-color);">
+
+<body
+    style="display: flex; align-items: center; justify-content: center; min-height: 100vh; position: relative; overflow: hidden; background: var(--bg-color);">
     <!-- Page Loader -->
     <div class="loader-wrapper">
         <div class="loader">
@@ -16,35 +19,61 @@
     </div>
     <style>
         @keyframes blobBounce {
-            0% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-48%, -52%) scale(1.05); }
-            100% { transform: translate(-50%, -50%) scale(1); }
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-48%, -52%) scale(1.05);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
+
         @keyframes blobBounceOp {
-            0% { transform: translate(50%, 50%) scale(1); }
-            50% { transform: translate(45%, 55%) scale(1.1); }
-            100% { transform: translate(50%, 50%) scale(1); }
+            0% {
+                transform: translate(50%, 50%) scale(1);
+            }
+
+            50% {
+                transform: translate(45%, 55%) scale(1.1);
+            }
+
+            100% {
+                transform: translate(50%, 50%) scale(1);
+            }
         }
     </style>
 
     <!-- Abstract Ambient Background -->
-    <div style="position: absolute; top: 0; left: 0; width: 50vw; height: 50vw; background: var(--primary); filter: blur(150px); border-radius: 50%; z-index: 0; opacity: 0.15; pointer-events: none; animation: blobBounce 15s ease-in-out infinite;"></div>
-    <div style="position: absolute; bottom: 0; right: 0; width: 40vw; height: 40vw; background: var(--accent); filter: blur(120px); border-radius: 50%; z-index: 0; opacity: 0.1; pointer-events: none; animation: blobBounceOp 18s ease-in-out infinite reverse;"></div>
+    <div
+        style="position: absolute; top: 0; left: 0; width: 50vw; height: 50vw; background: var(--primary); filter: blur(150px); border-radius: 50%; z-index: 0; opacity: 0.15; pointer-events: none; animation: blobBounce 15s ease-in-out infinite;">
+    </div>
+    <div
+        style="position: absolute; bottom: 0; right: 0; width: 40vw; height: 40vw; background: var(--accent); filter: blur(120px); border-radius: 50%; z-index: 0; opacity: 0.1; pointer-events: none; animation: blobBounceOp 18s ease-in-out infinite reverse;">
+    </div>
 
     <!-- Top Navigation Elements -->
-    <button id="theme-toggle" style="position: absolute; top: 2rem; right: 2rem; z-index: 10; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; color: var(--text-primary); backdrop-filter: blur(16px); transition: transform 0.3s ease, border-color 0.3s ease;">
+    <button id="theme-toggle"
+        style="position: absolute; top: 2rem; right: 2rem; z-index: 10; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; color: var(--text-primary); backdrop-filter: blur(16px); transition: transform 0.3s ease, border-color 0.3s ease;">
         <i class="fa-solid fa-sun"></i>
     </button>
 
-    <a href="index.html" style="position: absolute; top: 2rem; left: 2rem; z-index: 10; color: var(--text-primary); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.6rem 1.2rem; border-radius: 30px; backdrop-filter: blur(16px); transition: transform 0.3s ease, background 0.3s ease;" onmouseover="this.style.background='var(--nav-scrolled)'" onmouseout="this.style.background='var(--glass-bg)'">
+    <a href="index.html"
+        style="position: absolute; top: 2rem; left: 2rem; z-index: 10; color: var(--text-primary); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 0.6rem 1.2rem; border-radius: 30px; backdrop-filter: blur(16px); transition: transform 0.3s ease, background 0.3s ease;"
+        onmouseover="this.style.background='var(--nav-scrolled)'" onmouseout="this.style.background='var(--glass-bg)'">
         <i class="fa fa-arrow-left"></i> Back to Home
     </a>
 
-    <div class="container fade-in" style="position: relative; z-index: 1; width: 100%; max-width: 420px; padding: 2rem 1rem;">
-        
+    <div class="container fade-in"
+        style="position: relative; z-index: 1; width: 100%; max-width: 420px; padding: 2rem 1rem;">
+
         <!-- Brand Header inside Auth -->
         <div style="text-align: center; margin-bottom: 2.5rem;">
-            <a href="index.html" class="brand" style="justify-content: center; font-size: 2.2rem; margin-bottom: 0.5rem;" draggable="false">
+            <a href="index.html" class="brand"
+                style="justify-content: center; font-size: 2.2rem; margin-bottom: 0.5rem;" draggable="false">
                 <i class="fa-solid fa-bolt text-gradient"></i>
                 Manu's Digital Solutions
             </a>
@@ -52,71 +81,108 @@
         </div>
 
         <!-- Auth Container -->
-        <div class="glass-card" style="width: 100%; border-radius: 24px; padding: 2.5rem 2rem; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 1px solid rgba(255, 255, 255, 0.08);">
-            
+        <div class="glass-card"
+            style="width: 100%; border-radius: 24px; padding: 2.5rem 2rem; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 1px solid rgba(255, 255, 255, 0.08);">
+
             <!-- Form Tabs -->
-            <div style="display: flex; margin-bottom: 2rem; background: rgba(0,0,0,0.1); border-radius: 12px; padding: 0.4rem; border: 1px solid var(--glass-border);">
-                <button id="tab-login" style="flex: 1; padding: 0.8rem; background: var(--primary); border: none; border-radius: 8px; color: white; cursor: pointer; font-family: inherit; font-weight: 600; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4); transition: all 0.3s ease;">Sign In</button>
-                <button id="tab-register" style="flex: 1; padding: 0.8rem; background: transparent; border: none; border-radius: 8px; color: var(--text-secondary); cursor: pointer; font-family: inherit; font-weight: 600; transition: all 0.3s ease;">Register</button>
+            <div
+                style="display: flex; margin-bottom: 2rem; background: rgba(0,0,0,0.1); border-radius: 12px; padding: 0.4rem; border: 1px solid var(--glass-border);">
+                <button id="tab-login"
+                    style="flex: 1; padding: 0.8rem; background: var(--primary); border: none; border-radius: 8px; color: white; cursor: pointer; font-family: inherit; font-weight: 600; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4); transition: all 0.3s ease;">Sign
+                    In</button>
+                <button id="tab-register"
+                    style="flex: 1; padding: 0.8rem; background: transparent; border: none; border-radius: 8px; color: var(--text-secondary); cursor: pointer; font-family: inherit; font-weight: 600; transition: all 0.3s ease;">Register</button>
             </div>
 
-            <div id="alert-box" style="display: none; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; text-align: center; font-weight: 500;"></div>
+            <div id="alert-box"
+                style="display: none; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.9rem; text-align: center; font-weight: 500;">
+            </div>
 
             <!-- Login Form -->
             <form id="form-login">
                 <div class="input-group" style="position: relative; margin-bottom: 1.5rem;">
-                    <label for="login-email" style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Email Address</label>
+                    <label for="login-email"
+                        style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Email
+                        Address</label>
                     <div style="position: relative;">
-                        <i class="fa-solid fa-envelope" style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
-                        <input type="email" id="login-email" class="glass-input" required value="admin@digitalsolutions.io" placeholder="you@example.com" style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
+                        <i class="fa-solid fa-envelope"
+                            style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
+                        <input type="email" id="login-email" class="glass-input" required
+                            value="admin@digitalsolutions.io" placeholder="you@example.com"
+                            style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
                     </div>
                 </div>
                 <div class="input-group" style="position: relative; margin-bottom: 1.5rem;">
-                    <label for="login-password" style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Password</label>
+                    <label for="login-password"
+                        style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Password</label>
                     <div style="position: relative;">
-                        <i class="fa-solid fa-lock" style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
-                        <input type="password" id="login-password" class="glass-input" required value="password123" placeholder="••••••••" style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
+                        <i class="fa-solid fa-lock"
+                            style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
+                        <input type="password" id="login-password" class="glass-input" required value="password123"
+                            placeholder="••••••••" style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
                     </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.85rem;">
-                    <label style="color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" style="accent-color: var(--primary); width: 14px; height: 14px;"> Remember me
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.85rem;">
+                    <label
+                        style="color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" style="accent-color: var(--primary); width: 14px; height: 14px;">
+                        Remember me
                     </label>
-                    <a href="#" style="color: var(--text-primary); text-decoration: none; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-primary)'">Forgot Password?</a>
+                    <a href="#"
+                        style="color: var(--text-primary); text-decoration: none; font-weight: 500; transition: color 0.3s;"
+                        onmouseover="this.style.color='var(--primary)'"
+                        onmouseout="this.style.color='var(--text-primary)'">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 12px; padding: 1rem; font-size: 1rem; font-weight: 600; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); border: none; cursor: pointer;">Sign In to Dashboard</button>
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; border-radius: 12px; padding: 1rem; font-size: 1rem; font-weight: 600; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); border: none; cursor: pointer;">Sign
+                    In to Dashboard</button>
             </form>
 
             <!-- Register Form -->
             <form id="form-register" style="display: none;">
                 <div class="input-group" style="position: relative; margin-bottom: 1.5rem;">
-                    <label for="reg-name" style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Full Name</label>
+                    <label for="reg-name"
+                        style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Full
+                        Name</label>
                     <div style="position: relative;">
-                        <i class="fa-solid fa-user" style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
-                        <input type="text" id="reg-name" class="glass-input" required placeholder="John Doe" style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
+                        <i class="fa-solid fa-user"
+                            style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
+                        <input type="text" id="reg-name" class="glass-input" required placeholder="John Doe"
+                            style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
                     </div>
                 </div>
                 <div class="input-group" style="position: relative; margin-bottom: 1.5rem;">
-                    <label for="reg-email" style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Email Address</label>
+                    <label for="reg-email"
+                        style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Email
+                        Address</label>
                     <div style="position: relative;">
-                        <i class="fa-solid fa-envelope" style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
-                        <input type="email" id="reg-email" class="glass-input" required placeholder="you@example.com" style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
+                        <i class="fa-solid fa-envelope"
+                            style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
+                        <input type="email" id="reg-email" class="glass-input" required placeholder="you@example.com"
+                            style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
                     </div>
                 </div>
                 <div class="input-group" style="position: relative; margin-bottom: 2rem;">
-                    <label for="reg-password" style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Password (min 6 chars)</label>
+                    <label for="reg-password"
+                        style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Password
+                        (min 6 chars)</label>
                     <div style="position: relative;">
-                        <i class="fa-solid fa-lock" style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
-                        <input type="password" id="reg-password" class="glass-input" required placeholder="••••••••" style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
+                        <i class="fa-solid fa-lock"
+                            style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
+                        <input type="password" id="reg-password" class="glass-input" required placeholder="••••••••"
+                            style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; border-radius: 12px; padding: 1rem; font-size: 1rem; font-weight: 600; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); border: none; cursor: pointer;">Create Secure Account</button>
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; margin-top: 1rem; border-radius: 12px; padding: 1rem; font-size: 1rem; font-weight: 600; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); border: none; cursor: pointer;">Create
+                    Secure Account</button>
             </form>
         </div>
     </div>
 
-    <script src="js/auth.js"></script>
-    <script src="js/main.js"></script>
+    <script src="auth.js"></script>
+    <script src="main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Redirect if already logged in
@@ -141,11 +207,11 @@
                 tabLogin.style.background = 'var(--primary)';
                 tabLogin.style.color = 'white';
                 tabLogin.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.4)';
-                
+
                 tabRegister.style.background = 'transparent';
                 tabRegister.style.color = 'var(--text-secondary)';
                 tabRegister.style.boxShadow = 'none';
-                
+
                 formLogin.style.display = 'block';
                 formRegister.style.display = 'none';
                 alertBox.style.display = 'none';
@@ -159,7 +225,7 @@
                 tabLogin.style.background = 'transparent';
                 tabLogin.style.color = 'var(--text-secondary)';
                 tabLogin.style.boxShadow = 'none';
-                
+
                 formRegister.style.display = 'block';
                 formLogin.style.display = 'none';
                 alertBox.style.display = 'none';
@@ -170,9 +236,9 @@
                 e.preventDefault();
                 const email = document.getElementById('login-email').value;
                 const pass = document.getElementById('login-password').value;
-                
+
                 const result = AuthService.login(email, pass);
-                if(result.success) {
+                if (result.success) {
                     window.location.href = 'dashboard.html';
                 } else {
                     showAlert(result.message, true);
@@ -192,7 +258,7 @@
                 }
 
                 const result = AuthService.register({ name, email, password: pass });
-                if(result.success) {
+                if (result.success) {
                     window.location.href = 'dashboard.html';
                 } else {
                     showAlert(result.message, true);
@@ -201,4 +267,5 @@
         });
     </script>
 </body>
+
 </html>

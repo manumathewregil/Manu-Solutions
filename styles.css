@@ -37,6 +37,12 @@ body.light-theme {
   font-family: 'Outfit', sans-serif;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-primary);
@@ -186,6 +192,7 @@ p {
   display: flex;
   gap: 2rem;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links a:not(.btn) {
@@ -378,6 +385,7 @@ p {
     transition: right 0.4s cubic-bezier(0.77,0.2,0.05,1.0);
     z-index: 999;
     border-left: 1px solid var(--glass-border);
+    align-items: flex-start;
   }
   
   .nav-links.active {
