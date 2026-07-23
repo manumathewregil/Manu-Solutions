@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Manu's Digital Solutions</title>
+    <title>Contact Us | Zionix</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -20,7 +20,7 @@
     <nav class="navbar">
         <a href="index.html" class="brand">
             <i class="fa-solid fa-bolt text-gradient"></i>
-            Manu's Digital Solutions
+            Zionix
         </a>
         <button class="hamburger"><i class="fa fa-bars"></i></button>
         <ul class="nav-links">
@@ -69,6 +69,20 @@
                         <textarea id="contact-message" class="glass-input" rows="5" required
                             placeholder="Tell us about your next project..." style="resize: vertical;"></textarea>
                     </div>
+                    <div class="input-group">
+                        <label>Attachment (Optional)</label>
+                        <div class="upload-zone" id="drop-zone">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <p>Drag & drop your files here or click to browse</p>
+                            <span>Supports PDF, DOCX, PNG, JPG (Max 10MB)</span>
+                            <input type="file" id="contact-file" style="display: none;" multiple>
+                        </div>
+                        <div id="file-list" class="file-list"></div>
+                        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-secondary); line-height: 1.4;">
+                            Alternatively, upload large files directly to our 
+                            <a href="https://drive.google.com/drive/folders/1qu32_YWTJ1cNfiBqHvx784Owkxv7PvnO?usp=sharing" target="_blank" style="color: var(--primary); text-decoration: underline;">Shared Google Drive Folder</a>.
+                        </p>
+                    </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                 </form>
                 <div id="contact-success" style="display: none; margin-top: 1rem; color: #86efac; text-align: center;">
@@ -85,7 +99,7 @@
                     </div>
                     <div>
                         <p style="color: white; font-weight: 500;">Email Us</p>
-                        <p>manumathewregil@gmail.com</p>
+                        <p>test@gmail.com</p>
                     </div>
                 </div>
 
@@ -96,7 +110,7 @@
                     </div>
                     <div>
                         <p style="color: white; font-weight: 500;">Call Us</p>
-                        <p>8078728863</p>
+                        <p>0123456789</p>
                     </div>
                 </div>
 
@@ -107,7 +121,7 @@
                     </div>
                     <div>
                         <p style="color: white; font-weight: 500;">Visit Us</p>
-                        <p>Kallumala, Mavelikara, Alappuzha, Kerala, India.</p>
+                        <p>Mavelikara, Alappuzha, Kerala, India.</p>
                     </div>
                 </div>
             </div>
@@ -131,7 +145,7 @@
             <!-- Brand Section -->
             <div>
                 <a href="index.html" class="brand" style="margin-bottom: 1.5rem; font-size: 2rem;"><i
-                        class="fa-solid fa-bolt text-gradient"></i> Manu's Digital Solutions</a>
+                        class="fa-solid fa-bolt text-gradient"></i> Zionix</a>
                 <p style="font-size: 1rem; margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.6;">
                     Crafting award-winning digital experiences. We bridge the gap between design and engineering to
                     build products that feel like magic.
@@ -191,7 +205,7 @@
         <!-- Bottom Bar -->
         <div class="container"
             style="position: relative; z-index: 1; padding-top: 2rem; border-top: 1px solid var(--glass-border); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
-            <p>&copy; 2026 Manu's Digital Solutions. Developed by Manu Mathew Regil.</p>
+            <p>&copy; 2026 | Zionix. All rights reserved</p>
             <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Terms of Service</a>
@@ -202,6 +216,79 @@
     <!-- Scripts -->
     <script src="main.js"></script>
     <script>
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('contact-file');
+        const fileList = document.getElementById('file-list');
+        let selectedFiles = [];
+
+        // Trigger file input click when clicking on the drop zone
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        // Handle drag events
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+            }, false);
+        });
+
+        // Handle file drop
+        dropZone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles(files);
+        });
+
+        // Handle file selection
+        fileInput.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+
+        function handleFiles(files) {
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                // Check if file is already added
+                if (!selectedFiles.some(f => f.name === file.name && f.size === file.size)) {
+                    selectedFiles.push(file);
+                }
+            }
+            updateFileList();
+        }
+
+        function updateFileList() {
+            fileList.innerHTML = '';
+            selectedFiles.forEach((file, index) => {
+                const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
+                
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.innerHTML = `
+                    <div class="file-item-info">
+                        <i class="fa-solid fa-file" style="color: var(--primary);"></i>
+                        <span><strong>${file.name}</strong> (${sizeInMB} MB)</span>
+                    </div>
+                    <button type="button" class="file-item-remove" data-index="${index}">&times;</button>
+                `;
+                fileList.appendChild(fileItem);
+            });
+
+            // Set up remove button listeners
+            document.querySelectorAll('.file-item-remove').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.getAttribute('data-index'));
+                    selectedFiles.splice(index, 1);
+                    updateFileList();
+                });
+            });
+        }
+
         document.getElementById('contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
             const btn = e.target.querySelector('button');
@@ -213,6 +300,8 @@
                 btn.textContent = originalText;
                 btn.disabled = false;
                 e.target.reset();
+                selectedFiles = [];
+                updateFileList();
                 const successMsg = document.getElementById('contact-success');
                 successMsg.style.display = 'block';
                 setTimeout(() => successMsg.style.display = 'none', 3000);

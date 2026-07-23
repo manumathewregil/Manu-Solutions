@@ -88,13 +88,28 @@ const AuthService = {
 // Expose to global scope
 window.AuthService = AuthService;
 
-// Seed Default Admin User if none exists
-if (!localStorage.getItem('users')) {
-    localStorage.setItem('users', JSON.stringify([{
+// Seed and migrate Default Admin User
+let users = [];
+try {
+    const usersJSON = localStorage.getItem('users');
+    users = usersJSON ? JSON.parse(usersJSON) : [];
+} catch (e) {
+    users = [];
+}
+
+const adminIndex = users.findIndex(u => u.id === 'admin-1' || u.email === 'admin@digitalsolutions.io');
+if (adminIndex !== -1) {
+    // Migrate existing admin to the new email
+    users[adminIndex].email = 'admin@zionix.io';
+    localStorage.setItem('users', JSON.stringify(users));
+} else if (!users.find(u => u.email === 'admin@zionix.io')) {
+    // Add demo admin if it doesn't exist
+    users.push({
         id: 'admin-1',
         name: 'Demo Admin',
-        email: 'admin@digitalsolutions.io',
+        email: 'admin@zionix.io',
         password: 'password123',
         createdAt: new Date().toISOString()
-    }]));
+    });
+    localStorage.setItem('users', JSON.stringify(users));
 }

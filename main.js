@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Hide Founder Page logic
+    if (localStorage.getItem('hideFounderPage') === 'true') {
+        if (window.location.pathname.endsWith('founder.html')) {
+            window.location.href = 'index.html';
+            return;
+        }
+        const founderLinks = document.querySelectorAll('a[href="founder.html"], a[href$="/founder.html"]');
+        founderLinks.forEach(link => {
+            const parentLi = link.closest('li');
+            if (parentLi) {
+                parentLi.style.display = 'none';
+            } else {
+                link.style.display = 'none';
+            }
+        });
+    }
+
     // 1. Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
     if(navbar) {

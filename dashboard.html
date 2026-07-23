@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Manu's Digital Solutions</title>
+    <title>Dashboard | Zionix</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -18,7 +18,7 @@
     <nav class="navbar scrolled">
         <a href="index.html" class="brand">
             <i class="fa-solid fa-bolt text-gradient"></i>
-            Manu's Digital Solutions
+            Zionix
         </a>
         <button class="hamburger"><i class="fa fa-bars"></i></button>
         <ul class="nav-links">
@@ -83,6 +83,26 @@
                     </li>
                 </ul>
             </div>
+
+            <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem;">
+                        <div>
+                            <h3 style="margin-bottom: 0.2rem;">Admin Controls</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Manage website visibility settings.</p>
+                        </div>
+                        <i class="fa-solid fa-gears" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; border-top: 1px solid var(--glass-border);">
+                        <span style="font-size: 0.95rem; font-weight: 500;">Hide Founder Page</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-hide-founder">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem;">Changes take effect immediately across all pages.</p>
+            </div>
             
         </div>
     </div>
@@ -97,7 +117,7 @@
             
             <!-- Brand Section -->
             <div>
-                <a href="index.html" class="brand" style="margin-bottom: 1.5rem; font-size: 2rem;"><i class="fa-solid fa-bolt text-gradient"></i> Manu's Digital Solutions</a>
+                <a href="index.html" class="brand" style="margin-bottom: 1.5rem; font-size: 2rem;"><i class="fa-solid fa-bolt text-gradient"></i> Zionix</a>
                 <p style="font-size: 1rem; margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.6;">
                     Crafting award-winning digital experiences. We bridge the gap between design and engineering to build products that feel like magic.
                 </p>
@@ -137,7 +157,7 @@
         
         <!-- Bottom Bar -->
         <div class="container" style="position: relative; z-index: 1; padding-top: 2rem; border-top: 1px solid var(--glass-border); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
-            <p>&copy; 2026 Manu's Digital Solutions. Developed by Manu Mathew Regil.</p>
+            <p>&copy; 2026 | Zionix. All rights reserved</p>
             <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Terms of Service</a>
@@ -157,6 +177,15 @@
             const user = AuthService.getCurrentUser();
             if(user) {
                 document.getElementById('user-name').textContent = user.name;
+            }
+
+            // Handle Hide Founder Page Switch
+            const hideFounderToggle = document.getElementById('toggle-hide-founder');
+            if (hideFounderToggle) {
+                hideFounderToggle.checked = localStorage.getItem('hideFounderPage') === 'true';
+                hideFounderToggle.addEventListener('change', (e) => {
+                    localStorage.setItem('hideFounderPage', e.target.checked);
+                });
             }
 
             // Handle Logout

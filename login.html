@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manu's Digital Solutions | Login</title>
+    <title>Zionix | Login</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -75,7 +75,7 @@
             <a href="index.html" class="brand"
                 style="justify-content: center; font-size: 2.2rem; margin-bottom: 0.5rem;" draggable="false">
                 <i class="fa-solid fa-bolt text-gradient"></i>
-                Manu's Digital Solutions
+                Zionix
             </a>
             <p style="color: var(--text-secondary); font-size: 0.95rem;">Welcome to the next generation dashboard.</p>
         </div>
@@ -99,7 +99,7 @@
             </div>
 
             <!-- Login Form -->
-            <form id="form-login">
+            <form id="form-login" autocomplete="off">
                 <div class="input-group" style="position: relative; margin-bottom: 1.5rem;">
                     <label for="login-email"
                         style="font-size: 0.85rem; font-weight: 500; margin-bottom: 0.6rem; color: var(--text-secondary); display: block;">Email
@@ -108,7 +108,7 @@
                         <i class="fa-solid fa-envelope"
                             style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
                         <input type="email" id="login-email" class="glass-input" required
-                            value="admin@digitalsolutions.io" placeholder="you@example.com"
+                            placeholder="you@example.com" autocomplete="off"
                             style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
                     </div>
                 </div>
@@ -118,8 +118,8 @@
                     <div style="position: relative;">
                         <i class="fa-solid fa-lock"
                             style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
-                        <input type="password" id="login-password" class="glass-input" required value="password123"
-                            placeholder="••••••••" style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
+                        <input type="password" id="login-password" class="glass-input" required
+                            placeholder="••••••••" autocomplete="new-password" style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
                     </div>
                 </div>
                 <div
@@ -171,7 +171,7 @@
                         <i class="fa-solid fa-lock"
                             style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.9rem;"></i>
                         <input type="password" id="reg-password" class="glass-input" required placeholder="••••••••"
-                            style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
+                            autocomplete="new-password" style="padding-left: 3rem; border-radius: 12px; height: 3rem;">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary"
