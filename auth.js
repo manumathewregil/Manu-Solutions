@@ -97,18 +97,20 @@ try {
     users = [];
 }
 
-const adminIndex = users.findIndex(u => u.id === 'admin-1' || u.email === 'admin@digitalsolutions.io');
+const adminIndex = users.findIndex(u => u.id === 'admin-1' || u.email === 'admin@digitalsolutions.io' || u.email === 'admin@zionix.io' || u.email === 'manumathewregil');
 if (adminIndex !== -1) {
-    // Migrate existing admin to the new email
-    users[adminIndex].email = 'admin@zionix.io';
+    // Migrate existing admin to the new credentials
+    users[adminIndex].name = 'Manu Mathew Regil';
+    users[adminIndex].email = 'manu@gmail.com';
+    users[adminIndex].password = 'Manu@26';
     localStorage.setItem('users', JSON.stringify(users));
-} else if (!users.find(u => u.email === 'admin@zionix.io')) {
-    // Add demo admin if it doesn't exist
+} else if (!users.find(u => u.email === 'manu@gmail.com')) {
+    // Add admin user if it doesn't exist
     users.push({
         id: 'admin-1',
-        name: 'Demo Admin',
-        email: 'admin@zionix.io',
-        password: 'password123',
+        name: 'Manu Mathew Regil',
+        email: 'manu@gmail.com',
+        password: 'Manu@26',
         createdAt: new Date().toISOString()
     });
     localStorage.setItem('users', JSON.stringify(users));

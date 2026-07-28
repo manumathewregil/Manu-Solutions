@@ -78,11 +78,45 @@
                             <input type="file" id="contact-file" style="display: none;" multiple>
                         </div>
                         <div id="file-list" class="file-list"></div>
-                        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-secondary); line-height: 1.4;">
-                            Alternatively, upload large files directly to our 
-                            <a href="https://drive.google.com/drive/folders/1qu32_YWTJ1cNfiBqHvx784Owkxv7PvnO?usp=sharing" target="_blank" style="color: var(--primary); text-decoration: underline;">Shared Google Drive Folder</a>.
+                        <p
+                            style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-secondary); line-height: 1.4;">
+                            Alternatively, upload large files directly to our
+                            <a href="https://drive.google.com/drive/folders/1qu32_YWTJ1cNfiBqHvx784Owkxv7PvnO?usp=sharing"
+                                target="_blank" style="color: var(--primary); text-decoration: underline;">Shared Google
+                                Drive Folder</a>.
                         </p>
                     </div>
+
+                    <!-- Google Form Upload Button -->
+                    <div class="input-group">
+                        <a href="https://forms.gle/LLXfFWJwrdEn7kch7" target="_blank" id="google-form-upload-btn" style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 0.6rem;
+                                width: 100%;
+                                padding: 0.85rem 1.5rem;
+                                border-radius: 10px;
+                                border: 1.5px solid rgba(99, 102, 241, 0.5);
+                                background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+                                color: var(--text-primary);
+                                font-size: 0.95rem;
+                                font-weight: 600;
+                                cursor: pointer;
+                                text-decoration: none;
+                                transition: all 0.3s ease;
+                                backdrop-filter: blur(8px);
+                                box-sizing: border-box;
+                            "
+                            onmouseover="this.style.background='linear-gradient(135deg, rgba(99,102,241,0.35), rgba(139,92,246,0.35))'; this.style.borderColor='rgba(139,92,246,0.8)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139,92,246,0.3)';"
+                            onmouseout="this.style.background='linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.15))'; this.style.borderColor='rgba(99,102,241,0.5)'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            <i class="fa-brands fa-google" style="font-size: 1.1rem; color: #818cf8;"></i>
+                            Upload via Google Form
+                            <i class="fa-solid fa-arrow-up-right-from-square"
+                                style="font-size: 0.8rem; opacity: 0.7;"></i>
+                        </a>
+                    </div>
+
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                 </form>
                 <div id="contact-success" style="display: none; margin-top: 1rem; color: #86efac; text-align: center;">
@@ -160,7 +194,8 @@
                     <a href="https://www.youtube.com/@manumathewregil" target="_blank" class="social-icon"
                         style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; border-radius: 50%; background: var(--glass-bg); border: 1px solid var(--glass-border);"><i
                             class="fa-brands fa-youtube"></i></a>
-                    <a href="https://www.linkedin.com/in/manu-mathew-regil-238411379/" target="_blank" class="social-icon"
+                    <a href="https://www.linkedin.com/in/manu-mathew-regil-238411379/" target="_blank"
+                        class="social-icon"
                         style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; border-radius: 50%; background: var(--glass-bg); border: 1px solid var(--glass-border);"><i
                             class="fa-brands fa-linkedin-in"></i></a>
                 </div>
@@ -195,9 +230,10 @@
                 </form>
                 <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-secondary);"><i
                         class="fa-solid fa-envelope" style="margin-right: 8px; color: var(--primary);"></i>
-                    manumathewregil@gmail.com</p>
+                    test@gmail.com</p>
                 <p style="font-size: 0.9rem; color: var(--text-secondary);"><i class="fa-solid fa-location-dot"
-                        style="margin-right: 8px; color: var(--primary);"></i> Kallumala, Mavelikara, Alappuzha, Kerala, India.</p>
+                        style="margin-right: 8px; color: var(--primary);"></i>Mavelikara, Alappuzha, Kerala,
+                    India.</p>
             </div>
 
         </div>
@@ -266,7 +302,7 @@
             fileList.innerHTML = '';
             selectedFiles.forEach((file, index) => {
                 const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
-                
+
                 const fileItem = document.createElement('div');
                 fileItem.className = 'file-item';
                 fileItem.innerHTML = `
